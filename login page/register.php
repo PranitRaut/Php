@@ -22,13 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = trim($_POST['Username']);
     $email = trim($_POST['email']);
     $input_password = trim($_POST['password']);
+    $phone = trim($_POST['phone']);
 
     // Hash the password (use a stronger hashing method for production)
     $hashed_password = md5($input_password);
 
     // Prepare and bind the statement
-    $stmt = $conn->prepare("INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $input_username, $email, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO users (name, username, email, password,phone) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $name, $input_username, $email, $hashed_password,$phone);
 
     // Execute the statement
     if ($stmt->execute()) {
