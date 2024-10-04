@@ -22,7 +22,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('https://img.freepik.com/free-vector/gradient-emerald-background_23-2150272593.jpg?t=st=1727784920~exp=1727788520~hmac=71d21062751a6bde25236ddf8938541533736e7439d7b75918c7ce8eb3eb4c6e&w=996');
+            background-image: url('https://img.freepik.com/free-photo/workplace-with-smartphone-laptop-black-table-top-view-copyspace-background_144627-24860.jpg?t=st=1727953955~exp=1727957555~hmac=fbe41ff173fb33b311265cf25b24baedfd30eefb22d1cebc72c6edb18196e95d&w=996');
             /* Replace with your image path */
             background-size: cover;
             background-position: center;
