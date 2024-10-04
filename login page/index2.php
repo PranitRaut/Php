@@ -22,7 +22,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('https://img.freepik.com/free-vector/gradient-emerald-background_23-2150272593.jpg?t=st=1727784920~exp=1727788520~hmac=71d21062751a6bde25236ddf8938541533736e7439d7b75918c7ce8eb3eb4c6e&w=996');       
+            background-image: url('https://img.freepik.com/free-photo/keyboard-tea-cup-apple-office-stationeries-black-background_23-2148042011.jpg?t=st=1727954028~exp=1727957628~hmac=deabde28e52260bd6220e939a2547124fd74da9e521267b355fc81551abb70d4&w=996');
             /* Replace with your image path */
             background-size: cover;
             background-position: center;
@@ -131,13 +131,16 @@
     <div class="login-container">
         
         <h2>Login</h2>
-        <form action="register.php" method="POST">
+        <form action="register.php" id="registrationForm" method="POST">
 
             <div class="input-group">
                 <input type="text" name="name" placeholder="Enter Your Name" required>
             </div>
             <div class="input-group">
                 <input type="text" name="Username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="number" id="mobile" name="phone" placeholder="Enter Your Number" required>
             </div>
             <div class="input-group">
                 <input type="email" name="email" placeholder="Enter your email id" required>
@@ -148,12 +151,51 @@
             <button class="login-btn" type="submit">SIGN UP</button>
             <div class="options">
                 <label><input type="checkbox"> Already A User? </label>
-                <a href="login.php" style="color: white;">Log In</a>
+                <a href="index.php" style="color: white;">Log In</a>
             </div>
 
     </div>
     </form>
     </div>
+    <script>
+    function validateMobile() {
+        const mobileInput = document.getElementById('mobile');
+        const mobileValue = mobileInput.value;
+
+        // Check if the first digit is between 6 and 9
+        if (mobileValue.length === 1) {
+            const firstDigit = mobileValue.charAt(0);
+            if (firstDigit < '6' || firstDigit > '9') {
+                mobileInput.value = ''; // Clear the input if the first digit is invalid
+                alert('The first digit must be between 6 and 9.');
+                return;
+            }
+        }
+
+        // Block input after 10 digits
+        if (mobileValue.length > 10) {
+            mobileInput.value = mobileValue.slice(0, 10);
+        }
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        const mobile = document.getElementById('mobile').value;
+
+        // Ensure mobile number is exactly 10 digits before submitting
+        if (mobile.length !== 10) {
+            alert('Mobile number must be exactly 10 digits.');
+            event.preventDefault();
+            return;
+        }
+
+        // Ensure the first digit is between 6 and 9 before submitting
+        if (mobile.charAt(0) < '6' || mobile.charAt(0) > '9') {
+            alert('The first digit must be between 6 and 9.');
+            event.preventDefault();
+        }
+    });
+</script>
+
 </body>
 
 </html>
