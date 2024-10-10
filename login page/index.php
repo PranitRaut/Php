@@ -116,10 +116,28 @@
             letter-spacing: 1px;
             padding-top: 15px;
         }
+
+        .wp{
+            height:100px;
+            width: 100px;
+            position: fixed;
+            margin-top: 600px;
+            margin-left: 1300px;
+    
+        }
+
     </style>
 </head>
 
 <body>
+
+<div class="wp">
+  <a href="https://wa.me/9252667322">  
+    <img src="img/whatsapp.png" alt="" height="50" width="50">
+  </a>
+</div>
+
+
     <div class="login-container">
         <h2>Login</h2>
         <form action="login.php" method="POST">
@@ -138,6 +156,7 @@
                 <a href="index2.php" style="color: white;">Register Here</a>
             </div>
         </form>
+        
     </div>
 </body>
 
