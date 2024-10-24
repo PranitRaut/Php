@@ -26,7 +26,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
 
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">navbar</a>
@@ -46,25 +45,26 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="btn btn-outline-primary" href="logout.php">Logout</a>
-                </li>
-            </ul>
+            
             <ul class="navbar-nav">
                  <li class="nav-item">
                 <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary" href="logout.php">Logout</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <!-- <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1> -->
-    <!-- <p> 
-        <a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
-         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a> 
-    </p> -->
 
-    <a class="btn btn-outline-warning" href="register_data.php">view</a>
+    <!-- Buttons for adding and viewing blogs -->
+    <div class="container mt-5">
+        <a class="btn btn-success" href="add_blog.php">Add Blog</a>
+        <a class="btn btn-info ml-3" href="view_blog.php">View Blog</a>
+    </div>
+
 </body>
 
 </html>
