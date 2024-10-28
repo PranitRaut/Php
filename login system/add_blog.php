@@ -96,19 +96,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .wrapper {
             width: 500px;
             margin: 0 auto;
-            border: 2px solid blue; /* Blue border */
-            padding: 20px; /* Padding for inner spacing */
-            border-radius: 10px; /* Rounded corners */
-            background-color: #f9f9f9; /* Light background color */
+            border: 2px solid blue;
+            /* Blue border */
+            padding: 20px;
+            /* Padding for inner spacing */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Light background color */
         }
+
         .btn-back {
-            border: 2px solid blue; /* Blue border */
-            background-color: white; /* White background */
-            color: blue; /* Blue text color */
+            border: 2px solid blue;
+            /* Blue border */
+            background-color: white;
+            /* White background */
+            color: blue;
+            /* Blue text color */
         }
+
         .btn-back:hover {
-            background-color: blue; /* Blue background on hover */
-            color: white; /* White text color on hover */
+            background-color: blue;
+            /* Blue background on hover */
+            color: white;
+            /* White text color on hover */
         }
     </style>
 </head>
@@ -125,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home </a>
+                    <a class="nav-link" href="welcome.php">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -133,8 +144,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog_view.php">Blog</a>
+                </li>
             </ul>
-           
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
@@ -151,25 +165,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="wrapper">
         <h2>Add Blog</h2>
         <p>Please fill this form to create a new blog post.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+            enctype="multipart/form-data">
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $title; ?>">
+                <input type="text" name="title"
+                    class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $title; ?>">
                 <span class="invalid-feedback"><?php echo $title_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control <?php echo (!empty($description_err)) ? 'is-invalid' : ''; ?>"><?php echo $description; ?></textarea>
+                <textarea name="description"
+                    class="form-control <?php echo (!empty($description_err)) ? 'is-invalid' : ''; ?>"><?php echo $description; ?></textarea>
                 <span class="invalid-feedback"><?php echo $description_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Date</label>
-                <input type="date" name="date" class="form-control <?php echo (!empty($date_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $date; ?>">
+                <input type="date" name="date"
+                    class="form-control <?php echo (!empty($date_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $date; ?>">
                 <span class="invalid-feedback"><?php echo $date_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Image</label>
-                <input type="file" name="image" class="form-control-file <?php echo (!empty($image_err)) ? 'is-invalid' : ''; ?>">
+                <input type="file" name="image"
+                    class="form-control-file <?php echo (!empty($image_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $image_err; ?></span>
             </div>
             <div class="form-group">

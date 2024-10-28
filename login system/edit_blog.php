@@ -83,7 +83,7 @@ mysqli_close($link);
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +92,7 @@ mysqli_close($link);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home </a>
+                    <a class="nav-link" href="welcome.php">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -100,8 +100,11 @@ mysqli_close($link);
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog_view.php">Blog</a>
+                </li>
             </ul>
-           
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
@@ -114,22 +117,26 @@ mysqli_close($link);
             </ul>
         </div>
     </nav>
-    
+
     <div class="container">
         <h2>Edit Blog Post</h2>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=" . $id; ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=" . $id; ?>" method="post"
+            enctype="multipart/form-data">
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control" value="<?php echo htmlspecialchars($title); ?>" required>
+                <input type="text" name="title" class="form-control" value="<?php echo htmlspecialchars($title); ?>"
+                    required>
             </div>
             <div class="form-group">
                 <label>Date</label>
-                <input type="date" name="date" class="form-control" value="<?php echo htmlspecialchars($date); ?>" required>
+                <input type="date" name="date" class="form-control" value="<?php echo htmlspecialchars($date); ?>"
+                    required>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control" required><?php echo htmlspecialchars($description); ?></textarea>
+                <textarea name="description" class="form-control"
+                    required><?php echo htmlspecialchars($description); ?></textarea>
             </div>
             <div class="form-group">
                 <label>Current Image</label><br>

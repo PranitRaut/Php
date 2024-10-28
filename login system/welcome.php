@@ -36,7 +36,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home </a>
+                    <a class="nav-link" href="welcome.php">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -44,11 +44,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog_view.php">Blog</a>
+                </li>
             </ul>
-            
+
             <ul class="navbar-nav">
-                 <li class="nav-item">
-                <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
+                <li class="nav-item">
+                    <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

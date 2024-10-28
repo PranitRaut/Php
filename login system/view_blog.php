@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 require_once "config.php";
 
 // Fetch all blog posts from the database ordered by id (ascending) and date (descending)
-$sql = "SELECT * FROM blog ORDER BY id ASC, date DESC"; 
+$sql = "SELECT * FROM blog ORDER BY id ASC, date DESC";
 $result = mysqli_query($link, $sql);
 ?>
 
@@ -27,13 +27,17 @@ $result = mysqli_query($link, $sql);
         .container {
             margin-top: 20px;
         }
+
         table {
             width: 100%;
         }
-        table th, table td {
+
+        table th,
+        table td {
             text-align: center;
             vertical-align: middle;
         }
+
         img {
             max-height: 100px;
             object-fit: cover;
@@ -53,7 +57,7 @@ $result = mysqli_query($link, $sql);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home </a>
+                    <a class="nav-link" href="welcome.php">Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -61,8 +65,11 @@ $result = mysqli_query($link, $sql);
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog_view.php">Blog</a>
+                </li>
             </ul>
-            
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="reset_password.php" class="btn btn-warning">Reset Password</a>
@@ -78,7 +85,7 @@ $result = mysqli_query($link, $sql);
 
     <div class="container">
         <h2>Blog Posts</h2>
-        
+
         <!-- Back Button -->
         <a href="add_blog.php" class="btn btn-secondary mb-3">Back to Add Blog</a>
 
@@ -88,7 +95,7 @@ $result = mysqli_query($link, $sql);
             echo '<table class="table table-bordered table-striped">';
             echo '<thead>';
             echo '<tr>';
-            echo '<th>ID</th>';  
+            echo '<th>ID</th>';
             echo '<th>Image</th>';
             echo '<th>Title</th>';
             echo '<th>Date</th>';
@@ -98,18 +105,18 @@ $result = mysqli_query($link, $sql);
             echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
-            
+
             // Output data of each row
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
                 echo '<td>' . htmlspecialchars($row['id']) . '</td>';  // Displaying blog post ID
                 echo '<td><img src="img/Gallery/' . htmlspecialchars($row['image']) . '" class="img-fluid" alt="Blog Image"></td>';
                 echo '<td>' . htmlspecialchars($row['title']) . '</td>';
-                
+
                 // Format the date for display
                 $formattedDate = date('F j, Y', strtotime($row['date']));
                 echo '<td>' . htmlspecialchars($formattedDate) . '</td>'; // Display formatted date
-                
+        
                 echo '<td>' . htmlspecialchars($row['description']) . '</td>';
                 echo '<td>' . htmlspecialchars($row['created_at']) . '</td>';
                 echo '<td>';
