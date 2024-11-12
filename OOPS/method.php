@@ -17,6 +17,8 @@ function info(){
 info();
 info();
 
+
+
 // function with arg....
 function result($price,$gst){
 
@@ -34,7 +36,7 @@ function result($price,$gst){
 result(1200,18);
 
 
-# return type 
+//  return type 
 
 function tax(){
     return 1200;
@@ -57,11 +59,16 @@ function bill($price,$gst){
 ?>
 
 
+<!-- calling function return type  -->
+
 <h1>
 
     <?php echo("Tax : ".tax()); ?>
 </h1>
 
+
+
+ <!-- calling function return type with arg... -->
 <h1>
 
     <?php echo("MRP : ".bill(4500,9)); ?>
