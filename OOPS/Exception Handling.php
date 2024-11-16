@@ -1,5 +1,9 @@
 Error and Exception Handling in PHP
 --------------------------------------------------------------------------------------------------------------------------------------
+PHP provides mechanisms to handle both errors and exceptions to ensure that your application runs smoothly and gracefully
+handles unexpected issues. Below is a guide on how to set up error and exception handling in PHP.
+---------------------------------------------------------------------------------------------------------------------------------------
+
 1. Setting Up Error Reporting
 First, configure PHP’s error reporting to control what types of errors are displayed. This helps in debugging during development.
 
